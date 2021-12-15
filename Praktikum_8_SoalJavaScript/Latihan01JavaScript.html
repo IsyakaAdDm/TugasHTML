@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum JavaScript</title>
+    <script>
+
+        function hitungluas(){
+            const phi = 3.14;
+            let bilangan1 = document.getElementById("jarijari").value;
+            console.log("Jari-Jari : " + bilangan1)
+            let luas_lingkaran = phi * bilangan1 * bilangan1;
+            let keliling = 2.0 * phi * bilangan1;
+            console.log("Luas Lingkaran : " + luas_lingkaran);
+            console.log("Keliling : " + keliling);
+            let area_hasil = document.getElementById("hasil");
+            area_hasil.innerHTML = "Luas: " + luas_lingkaran + "\n Keliling : " + keliling;
+
+        }
+
+        function hitungkurs(){
+            const nilairupiah = 14650;
+            let dolar = document.getElementById("nilairupiah").value;
+            console.log("Satu Dolar : " + "Rp " + nilairupiah);
+            let kursdolar = dolar / nilairupiah;
+            console.log("Hasil  : " + "$" + kursdolar);
+            let kurs_hasil = document.getElementById("hasilkurs");
+            kurs_hasil.innerHTML = "$" + kursdolar;
+
+        }
+
+        function parkir(){
+            let masuk = document.getElementById("masuk").value;
+            let keluar = document.getElementById("keluar").value;
+            let waktuparkir = keluar - masuk;
+            let biayaparkir =0;
+            const TARIF_AWAL = 3000;
+            const TARIF_PERJAM = 1000;
+            if(waktuparkir < 2){
+                biayaparkir = TARIF_AWAL;
+            }else{
+                let tambahjam = waktuparkir - 2;
+                biayaparkir = TARIF_AWAL + (TARIF_PERJAM * tambahjam)
+            }
+            let area_biaya = document.getElementById("biayaparkir");
+            area_biaya.innerHTML = "BIAYA PARKIR : " + biayaparkir;
+        }
+
+
+        function Hitung() {
+            let bilangan_1 = Number(document.getElementById("bil1").value);
+            let bilangan_2 = Number(document.getElementById("bil2").value);
+            let bilangan_3 = bilangan_1 + bilangan_2;
+            document.getElementById("bil3").value=bilangan_3;
+        }
+
+    </script>
+</head>
+<body>
+    <h3>Menghitung Luas dan Keliling Lingkaran</h3>
+    Masukkan Jari-Jari Lingkaran : 
+    <br>
+    <input type="number" value="" size="10" id="jarijari">
+    <br><br>
+    <button onclick="hitungluas()">Hitung</button>
+    <br><br>
+    Hasil : <span id="hasil"></span>
+    <br>
+
+    <h3>Menghitung Kurs Rupiah</h3>
+    Masukkan Nilai Rupiah :
+    <input type="number" value="" size="10" id="nilairupiah">
+    <br><br>
+    <button onclick="hitungkurs()">Hitung Nilai Kurs</button>
+    <br><br>
+    Hasil : <span id="hasilkurs"></span>
+
+
+
+    <br>
+    <h3>Hitung Biaya Parkir</h3>
+    Masuk Parkir : <br>
+    <input type="number" value="" size="10" id="masuk">
+    <br>
+    Keluar Parkir : <br>
+    <input type="number" value="" size="10" id="keluar">
+    <br><br>
+    <button onclick="parkir()">Click untuk bayar</button>
+    <span id="biayaparkir"></span>
+
+
+    <br>
+    <h3>Hitung Jumlah Dua Bilangan</h3>
+    <form action="">
+        <input type="text" id="bil1" value="" size="10" onchange="Hitung"> </br>
+        <b>+</b>
+        </br>
+        <input type="text" id="bil2" value="" size="10" onchange="Hitung"> </br>
+        <b>=</b> 
+        </br>
+        <input type="text" id="bil3" value="" size="10">
+    </form>
+</body>
+</html>
