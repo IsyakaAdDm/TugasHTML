@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 9 Kurs</title>
+    <style>
+        legend{
+            font-size: larger;
+        }
+        fieldset{
+            background-color: rgb(58, 219, 131);
+        }
+        table,tr{
+            border: 2px solid;
+            background-color: rgb(220, 255, 255);
+        }
+        td{
+            border: 1px solid;
+        }
+    </style>
+    <script>
+        function matauang(){
+            var indo = document.getElementById("rupiah").value;
+            var noin=document.getElementById("uang").value;
+            var hasil=0;
+
+            if (noin=="Dollar US"){
+                hasil=indo * 9915;
+            } else if (noin=="Dollar Singapore"){
+                hasil=indo * 13472;
+            } else if (noin=="Ringgit Malaysia"){
+                hasil=indo * 874;
+                console.log(hasil);
+            } else if (noin=="Yen Jepang"){
+                hasil=indo * 120;
+            } else if (noin=="Euro"){
+                hasil=indo * 15888;
+            } else if (noin=="Riyal Arab Saudi"){
+                hasil=indo * 3592;
+            }
+            document.getElementById("hasil").value=hasil;
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend><b>Kurs Rupiah - Mata Uang Asing</b></legend>
+        <form>
+            <table>
+                <tr>
+                    <th>Masukkan Nilai</th>
+                    <th>Valas</th>
+                    <th>Nilai Rupiah</th>
+                </tr>
+                <tr>
+                    <td><input type="number" value="0" id="rupiah" name="nominal"></td>
+                    <td>
+                        <select id="uang" onchange="matauang()" name="asing">
+                            <option value="Dollar US">Dollar US</option>
+                            <option value="Dollar Singapore">Dollar Singapore</option>
+                            <option value="Ringgit Malaysia">Ringgit Malaysia</option>
+                            <option value="Yen Jepang">Yen Jepang</option>
+                            <option value="Euro">Euro</option>
+                            <option value="Riyal Arab Saudi">Riyal Arab Saudi</option>
+                        </select>
+                    </td>
+                    <td><input type="number" value="" id="hasil" name="hasil"></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+</body>
+</html>
