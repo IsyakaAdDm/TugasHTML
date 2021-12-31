@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="gorilla.jpg" type="image/x-icon">
+    <title>Image Picker</title>
+    <script>
+      function appear() {
+        let pilihan = document.getElementById("img-select");
+        let tampilan = document.getElementById("preview");
+
+        if (pilihan.value == "Gorila") {
+          tampilan.src = "gorilla.jpg";
+        } else if (pilihan.value == "Beruang") {
+          tampilan.src = "beruang.jpg";
+        } else if (pilihan.value == "Bison") {
+          tampilan.src = "bison.jpg";
+        } else if (pilihan.value == "Gajah") {
+          tampilan.src = "gajah.jpg";
+        } else if (pilihan.value == "Panda") {
+          tampilan.src = "panda.jpg";
+        }
+      }
+      function confirm() {
+        window.alert("Chooses Your Image : " + document.getElementById("img-select").value);
+      }
+    </script>
+
+    <style>
+        #img-select {
+            border:rgb(221, 136, 24);
+            margin-left: 600px;
+            margin-top: 200px;
+            padding-left: 40px;
+            padding-top: 10px;
+            border-radius: 3vh;
+            background-color: rgb(201, 202, 199);
+            border-style: double ;
+        }
+    </style>
+  </head>
+  <body style="background-color: beige;">
+    <select name="binatang" value="" id="img-select" onclick="appear()" onmouseout="confirm()">
+      <option value="Gorila"> <b> Gorila </b> </option>
+      <option value="Beruang"> <b>Beruang</b> </option>
+      <option value="Bison"> <b>Bison</b> </option>
+      <option value="Gajah"> <b>Gajah</b> </option>
+      <option value="Panda"> <b>Panda</b> </option>
+    </select>
+    <div>
+      <img style=" margin-left: 500px; margin-top: 20px; width: 300px; border: 1px solid grey" src="#" alt="" value="" id="preview"  />
+    </div>
+  </body>
+</html>

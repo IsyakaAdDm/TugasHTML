@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ind">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 9 Chat</title>
+    <style>
+        #msg {
+            position: relative;
+            border: solid;
+            height: 15cm;
+            width: 99%;
+            padding-right: 2px;
+            padding-left: 2px;
+        }
+        #Pesan {
+            border: 3px solid;
+            position: absolute;
+            bottom: 4px;
+            width: 99%;
+        }
+        #layar {
+            width: 99%;
+            height: 9cm;
+        }
+        #pesanmasuk {
+            width: 85%;
+        }
+        #kirim{
+            border: 3px solid;
+            width: 14%;
+        }
+    </style>
+</head>
+<body>
+    <div id="msg">
+        <div id="isi" onsubmit="kirim()">
+            <div id="layar"></div>
+            <form id="Pesan">
+                <input type="text" id="pesanmasuk">
+                <button id="kirim">KIRIM</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let kirimPesan = document.getElementById("Pesan");
+        let pesan = document.getElementById("layar");
+        let chat = document.getElementById("pesanmasuk");
+        function handleForm(event){
+            event.preventDefault();
+        }
+        kirimPesan.addEventListener('submit', handleForm);
+
+        function kirim(){
+            pesan.innerHTML += "<br>" + chat.value + "<br>";
+            kirimPesan.reset()
+        }
+    </script>
+</body>
+</html>

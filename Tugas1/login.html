@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="login.jpeg" type="image/x-icon">
+    <title>Login authentication</title>
+
+    <style>
+        #body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: aquamarine;
+        }
+
+        .box{
+            width: 300px;
+            padding: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .box h1 {
+            color: white;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .box input[type="text"],.box input[type="password"]{
+            border: 0;
+            background: none;
+            display: block;
+            text-align: center;
+            border: 3px solid #0367fd ;
+            padding: 14px 10px;
+            width: 220px;
+            outline: none;
+            color: rgb(255, 239, 239);
+            border-radius: 24px;
+            transition: 0.25px;
+            margin: 20px;
+            text-transform: uppercase;
+        }
+
+        .box input[type="text"]:focus,.box input[type="password"]:focus{
+            width: 225px;
+            border-color: yellow;
+            text-transform: lowercase;
+        }
+
+        .box input[type="submit"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 3px solid #ffc400ec ;
+            width: 110px;
+            padding: 14px 10px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25px;
+            cursor: pointer;
+
+        }
+
+        .box input[type="submit"]:hover{
+            background: #ffc400ec;
+        }
+ 
+    </style>
+
+<script src="otentikasi.js">
+
+</script>
+
+
+</head>
+<body id="body">
+    <form class="box" action="#" method="post" name="form_login" >
+    <h1>Login</h1>
+    <input type="text" name="" placeholder="Enter username" id="username">
+    <input type="password" name="" placeholder="Enter password" id="password">
+    <input type="submit" name="" value="submit" onclick="validated(event)">
+    </form>
+</body>
+</html>
